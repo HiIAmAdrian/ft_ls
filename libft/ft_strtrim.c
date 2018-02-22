@@ -6,21 +6,11 @@
 /*   By: adstan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 18:07:53 by adstan            #+#    #+#             */
-/*   Updated: 2018/01/07 15:14:07 by adstan           ###   ########.fr       */
+/*   Updated: 2018/02/22 19:24:17 by adstan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/libft.h"
-
-static int	ft_s(char const *s)
-{
-	int i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 static int	functie(char const *s)
 {
@@ -36,7 +26,7 @@ static int	sf(char const *s)
 {
 	int i;
 
-	i = ft_s(s) - 1;
+	i = ft_strlen(s) - 1;
 	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
 		i--;
 	return (i);
@@ -57,14 +47,15 @@ char		*ft_strtrim(char const *s)
 		size = sfarsit - inceput;
 		if (size < 1)
 			size = 1;
-		if ((c = (char *)malloc(size + 2)))
+		if ((c = (char *)ft_memalloc(size + 2)))
 		{
 			i = 0;
 			while (inceput <= sfarsit)
 				c[i++] = s[inceput++];
-			c[i] = 0;
 			return (c);
 		}
+		if (c)
+			free(c);
 	}
 	return (NULL);
 }

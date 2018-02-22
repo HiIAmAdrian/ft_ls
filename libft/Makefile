@@ -6,7 +6,7 @@
 #    By: adstan <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/11 16:16:33 by adstan            #+#    #+#              #
-#    Updated: 2018/02/11 18:44:03 by adstan           ###   ########.fr        #
+#    Updated: 2018/02/22 20:14:46 by adstan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,19 +64,20 @@ SRC = ft_memset.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-		ft_lstnew.c \
-		ft_lstdelone.c \
-		ft_lstdel.c \
-		ft_lstadd.c \
-		ft_lstiter.c \
-		ft_lstmap.c \
 		ft_isprime.c \
 		ft_isperfect.c \
 		ft_abs.c \
 		ft_reverse.c \
 		ft_power.c \
 		ft_abs.c \
-		ft_sqrt.c
+		ft_sqrt.c \
+		ft_matrix_clear.c \
+		ft_lstnew.c \
+		ft_lstdelone.c \
+		ft_lstdel.c \
+		ft_lstadd.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 
 OBJ = $(SRC:.c=.o)
 

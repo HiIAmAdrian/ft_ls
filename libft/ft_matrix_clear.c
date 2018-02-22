@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_matrixClear.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adstan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/08 16:23:03 by adstan            #+#    #+#             */
-/*   Updated: 2018/02/22 20:14:12 by adstan           ###   ########.fr       */
+/*   Created: 2018/02/22 19:46:19 by adstan            #+#    #+#             */
+/*   Updated: 2018/02/22 20:15:12 by adstan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "./includes/libft.h"
 
-void	*ft_memalloc(size_t n)
+void	ft_matrix_clear(char **str)
 {
-	unsigned char	*s;
-	size_t			i;
+	int i;
 
 	i = 0;
-	if ((s = (unsigned char*)malloc(n)))
+	if (str)
 	{
-		while (i < n)
+		while (str[i])
 		{
-			s[i] = 0;
+			free(str[i]);
 			i++;
 		}
-		return (s);
+		free(str);
 	}
-	return (NULL);
 }

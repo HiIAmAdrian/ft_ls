@@ -6,11 +6,11 @@
 /*   By: adstan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 19:13:18 by adstan            #+#    #+#             */
-/*   Updated: 2017/12/12 19:16:30 by adstan           ###   ########.fr       */
+/*   Updated: 2018/02/22 19:44:48 by adstan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "./includes/libft.h"
 
 static int		sari(char const *s, int i, char c)
 {

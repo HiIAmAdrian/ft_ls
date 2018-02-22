@@ -6,11 +6,11 @@
 /*   By: adstan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 17:30:52 by adstan            #+#    #+#             */
-/*   Updated: 2017/12/09 18:00:44 by adstan           ###   ########.fr       */
+/*   Updated: 2018/02/22 20:15:23 by adstan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "./includes/libft.h"
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
@@ -22,7 +22,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	j = 0;
 	if (s)
 	{
-		if ((str = (char *)malloc(len + 1)))
+		if ((str = (char *)ft_memalloc(len + 1)))
 		{
 			while (j < len)
 			{
@@ -30,12 +30,10 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 				i++;
 				j++;
 			}
-			str[j] = 0;
 			return (str);
 		}
-		else
-			return (NULL);
+		if (str)
+			free(str);
 	}
-	else
-		return (NULL);
+	return (NULL);
 }

@@ -6,43 +6,22 @@
 /*   By: adstan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 15:40:42 by adstan            #+#    #+#             */
-/*   Updated: 2017/12/12 17:58:16 by adstan           ###   ########.fr       */
+/*   Updated: 2018/02/22 19:41:26 by adstan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-static int		ft_utchar(char c)
-{
-	write(1, &c, 1);
-	return (0);
-}
-
-static void		specialcase(void)
-{
-	ft_utchar('-');
-	ft_utchar('2');
-	ft_utchar('1');
-	ft_utchar('4');
-	ft_utchar('7');
-	ft_utchar('4');
-	ft_utchar('8');
-	ft_utchar('3');
-	ft_utchar('6');
-	ft_utchar('4');
-	ft_utchar('8');
-}
+#include "./includes/libft.h"
 
 static void		idk(int nb)
 {
 	if (!nb)
 	{
-		ft_utchar('0');
+		write(1, "0", 1);
 		return ;
 	}
 	if (nb == -2147483648)
 	{
-		specialcase();
+		write(1, "-2147483648", 11);
 		return ;
 	}
 }
@@ -61,7 +40,7 @@ void			ft_putnbr(int nb)
 	if (nb < 0)
 	{
 		nb = -nb;
-		ft_utchar('-');
+		write(1, "-", 1);
 	}
 	while (nb)
 	{
@@ -70,5 +49,5 @@ void			ft_putnbr(int nb)
 	}
 	i--;
 	while (i >= 0)
-		ft_utchar(v[i--] + '0');
+		ft_putchar(v[i--] + '0');
 }

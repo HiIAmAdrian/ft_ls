@@ -6,7 +6,7 @@
 /*   By: adstan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/09 18:56:44 by adstan            #+#    #+#             */
-/*   Updated: 2018/01/07 17:31:57 by adstan           ###   ########.fr       */
+/*   Updated: 2018/02/22 20:34:00 by adstan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef	struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+void			ft_matrix_clear(char **str);
 int				ft_isperfect(size_t n);
 int				ft_reverse(int n);
 int				ft_abs(int n);
@@ -88,4 +89,5 @@ void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int				ft_sqrt1(int n);
 int				ft_abs(int a);
+
 #	endif
